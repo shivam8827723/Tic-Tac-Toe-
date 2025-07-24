@@ -227,6 +227,19 @@
     <div class="game-container">
         <h1 class="text-3xl font-bold mb-4">Tic-Tac-Toe</h1>
 
+        <!-- Upper Ad Unit -->
+        <div class="my-4">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8266487631736473"
+                 data-ad-slot="2052703212"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
         <div class="input-group">
             <input type="text" id="playerXName" placeholder="Player X Name">
             <input type="text" id="playerOName" placeholder="Player O Name">
@@ -248,7 +261,19 @@
             <button id="resetAllButton">Reset Scores & Start New Game</button>
         </div>
 
-        <!-- Ad related elements removed -->
+        <!-- Side Ad Unit (placed at the bottom of the container for better flow) -->
+        <div class="my-4">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8266487631736473"
+                 data-ad-slot="9328558005"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
     </div>
 
     <script>
@@ -262,7 +287,6 @@
         const playerONameInput = document.getElementById('playerOName');
         const scoreXDisplay = document.getElementById('scoreX');
         const scoreODisplay = document.getElementById('scoreO');
-        // Ad related elements removed: gameLimitMessage, adButton
 
         // Game state variables
         let board = ['', '', '', '', '', '', '', '', '']; // Represents the 3x3 board
@@ -271,7 +295,6 @@
 
         let playerXScore = 0;
         let playerOScore = 0;
-        // Ad related variables removed: gamesPlayed, MAX_GAMES
         let consecutiveDraws = 0; // Variable to track consecutive draws
 
         // Winning conditions (indices of cells that form a win)
@@ -310,7 +333,6 @@
             // Update scores display
             updateScoreDisplay();
 
-            // Ad related logic removed: gameLimitMessage, adButton visibility
             gameActive = true; // Game is always active without limits
         }
 
@@ -415,7 +437,6 @@
                 }
                 consecutiveDraws = 0; // Reset consecutive draws on a win
                 updateScoreDisplay();
-                // gamesPlayed increment removed
                 return;
             }
 
@@ -443,7 +464,6 @@
 
                 gameStatus.textContent = drawMessage;
                 updateScoreDisplay();
-                // gamesPlayed increment removed
                 return;
             }
         }
@@ -469,17 +489,13 @@
         function resetAllGameProgress() {
             playerXScore = 0;
             playerOScore = 0;
-            // gamesPlayed reset removed
             consecutiveDraws = 0; // Reset consecutive draws on full game reset
             resetCurrentRound(); // Reset the current round state
         }
 
-        // Ad related function removed: watchAd()
-
         // Add event listeners
         playNextRoundButton.addEventListener('click', resetCurrentRound); // Play next round without resetting scores
         resetAllButton.addEventListener('click', resetAllGameProgress); // Reset all progress
-        // Ad related event listener removed: adButton.addEventListener('click', watchAd);
 
         // Update display when names change. Use 'input' for real-time updates.
         playerXNameInput.addEventListener('input', () => {
